@@ -1,0 +1,433 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { FaLinkedinIn, FaFacebook, FaYoutube } from "react-icons/fa";
+
+// Data for Speakers with Cloudinary URLs
+const speakers = [
+  {
+    id: 1,
+    name: "Farabi Hafiz",
+    role: "News Anchor & Media Presenter",
+    bio: "Renowned Bangladeshi news anchor and mentor known for narrative-driven presentation and communication excellence.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766944850/Farabi_Hafiz_uvy3zi.jpg",
+    socials: {
+      facebook: "https://www.facebook.com/FarabiHafizfan",
+      linkedin: null,
+      youtube: "https://youtube.com/watch?si=lFcB-6uDEvTQA-8L&v=mK3YAFlfPNg&feature=youtu.be",
+    },
+  },
+  {
+    id: 2,
+    name: "Engr. Md. Jakaria Jalal",
+    role: "Head of Project, Bashundhara Chemical Industries Ltd.",
+    bio: "Energy and industrial sector leader with 18+ years of experience driving innovation and sustainable growth.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766944851/Jakaria_Jalal_pf63rj.jpg",
+    socials: {
+      facebook: "https://www.facebook.com/share/1DpbduN3uZ/",
+      linkedin: "https://www.linkedin.com/in/jakaria",
+      youtube: "https://www.youtube.com/watch?v=zL6ci0bcezs",
+    },
+  },
+  {
+    id: 3,
+    name: "Mohaimin Patwary",
+    role: "Author, Teacher, Finance & Strategy Manager",
+    bio: "Economic analyst and bestselling author focused on simplifying finance and economics for mass audiences.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766944850/Mohaimin_Patwary_kyy7db.jpg",
+    socials: {
+      facebook: "https://www.facebook.com/share/1AKs214Zon/",
+      linkedin: "https://www.linkedin.com/in/mohaimin-patwary-cfa-a8416aab",
+      youtube: "https://www.youtube.com/watch?v=M1DFFR69DMQ"
+    },
+  },
+  {
+    id: 4,
+    name: "Nabila Khalid",
+    role: "General Manager – Head of Brand & Communication, Prime Bank Fintech Limited",
+    bio: "Communication and storytelling expert with strong presence in media and corporate initiatives.",
+    image:
+      "https://res.cloudinary.com/djm5mp7xg/image/upload/v1772488197/16007536-ba05-411f-819d-6f10822205f9.jpg_mhtvgp.jpg",
+    socials: {
+      facebook: "https://www.facebook.com/share/1AZhmvuW8P/",
+      linkedin: "https://www.linkedin.com/in/nabilakhalid",
+      youtube: "https://www.youtube.com/watch?v=zbNrqvwxbEc",
+    },
+  },
+  {
+    id: 5,
+    name: "Raka Noshin Nower",
+    role: "Founder & Producer, Studio Yellow Something Ltd.",
+    bio: "Bold filmmaker and storyteller blending technology with unconventional narratives.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766944856/Raka_Noshin_Nower_zzhcum.jpg",
+    socials: {
+      facebook: "https://www.facebook.com/share/1H8t5p1tLp/",
+      linkedin: "https://www.linkedin.com/in/raka-noshin-nower-ba1172321",
+      youtube: "https://www.youtube.com/watch?si=2qbnQA29QxuwYHHw&v=3Nv92hcxLME&feature=youtu.be",
+    },
+  },
+  {
+    id: 6,
+    name: "Ryusuke Konoike",
+    role: "CEO & Founder (Web Skill Education & Creator Platform)",
+    bio: "Entrepreneur building web-skill education and creator ecosystems with 1,000+ creators across Japan.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766944856/Ryusuke_Konoike_fyjdn9.jpg",
+    socials: {
+      facebook: "https://www.facebook.com/share/16ccaugRop/",
+      linkedin: "https://www.linkedin.com/in/ryusuke-konoike-6490642b3",
+      youtube: "https://www.youtube.com/watch?si=dVTvJ7Sg10g9bkfi&v=IVnbX1Ihmmw&feature=youtu.be",
+    },
+  },
+];
+
+
+const speaker1 = [
+  {
+    id: 1,
+    name: "",
+    role: "AUTHOR, ENTREPRENEUR, WILDLIFE ADVOCATE",
+    bio: "",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+      youtube: null,
+    },
+  },
+  {
+    id: 2,
+    name: "",
+    role: "Industry Expert",
+    bio: "",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+      youtube: null,
+    },
+  },
+  {
+    id: 3,
+    name: "",
+    role: "Author & Mentor",
+    bio: "",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+      youtube: null,
+    },
+  },
+  {
+    id: 4,
+    name: "",
+    role: "Corporate Specialist",
+    bio: "",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+      youtube: null,
+    },
+  },
+  {
+    id: 5,
+    name: "",
+    role: "Creative Producer",
+    bio: "",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+      youtube: null,
+    },
+  },
+  {
+    id: 6,
+    name: "",
+    role: "Founder & Entrepreneur",
+    bio: "",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+      youtube: null,
+    },
+  },
+];
+
+
+const Speakers = () => {
+  return (
+    <div>
+      <section
+        id="speakers"
+        className="relative py-24 bg-[#050505] text-white overflow-hidden"
+      >
+        {/* Background Ambient Glows */}
+        <div className="absolute top-0 left-[-10%] w-[600px] h-[600px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-[600px] h-[600px] bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <div className="mb-20 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center gap-3 mb-4"
+            >
+              <span className="w-8 h-[1px] bg-red-600"></span>
+              <span className="text-red-500 font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
+                The Visionaries
+              </span>
+              <span className="w-8 h-[1px] bg-red-600"></span>
+            </motion.div>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-8xl font-black tracking-tighter"
+            >
+              OUR{" "}
+              <span
+                className="text-transparent"
+                style={{ WebkitTextStroke: "1px rgba(255,255,255,0.6)" }}
+              >
+                SPEAKERS 2026
+              </span>
+            </motion.h3>
+          </div>
+
+          {/* Speakers Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {speaker1.map((speaker, index) => (
+              <motion.div
+                key={speaker.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-neutral-900 rounded-2xl overflow-hidden border border-white/5"
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover transition-all duration-700 grayscale-0 md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-100 md:opacity-60 md:group-hover:opacity-90 transition-opacity duration-500" />
+
+                  {/* Text Content */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                    <div className="transform transition-transform duration-500 md:translate-y-4 md:group-hover:translate-y-0">
+                      <p className="text-red-500 font-bold text-[10px] uppercase tracking-widest mb-2">
+                        {speaker.role}
+                      </p>
+                      <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-3">
+                        {speaker.name}
+                      </h4>
+
+                      {/* Bio expansion */}
+                      <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out md:opacity-0 md:group-hover:opacity-100">
+                        <p className="overflow-hidden text-sm text-gray-300 font-light italic leading-relaxed">
+                          {speaker.bio}
+                        </p>
+                      </div>
+
+                      {/* Socials */}
+                      <div className="flex gap-4 mt-4">
+                        {speaker.socials.linkedin && (
+                          <a
+                            href={speaker.socials.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaLinkedinIn size={18} />
+                          </a>
+                        )}
+                        {speaker.socials.facebook && (
+                          <a
+                            href={speaker.socials.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaFacebook size={18} />
+                          </a>
+                        )}
+                        {speaker.socials.youtube && (
+                          <a
+                            href={speaker.socials.youtube}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaYoutube size={20} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+
+
+        </div>
+      </section>
+      <section
+        id="speakers"
+        className="relative py-24 bg-[#050505] text-white overflow-hidden"
+      >
+        {/* Background Ambient Glows */}
+        <div className="absolute top-0 left-[-10%] w-[600px] h-[600px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-[600px] h-[600px] bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <div className="mb-20 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center gap-3 mb-4"
+            >
+              <span className="w-8 h-[1px] bg-red-600"></span>
+              <span className="text-red-500 font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
+                The Visionaries
+              </span>
+              <span className="w-8 h-[1px] bg-red-600"></span>
+            </motion.div>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-8xl font-black tracking-tighter"
+            >
+              2025{" "}
+              <span
+                className="text-transparent"
+                style={{ WebkitTextStroke: "1px rgba(255,255,255,0.6)" }}
+              >
+                SPEAKERS
+              </span>
+            </motion.h3>
+          </div>
+
+          {/* Speakers Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {speakers.map((speaker, index) => (
+              <motion.div
+                key={speaker.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-neutral-900 rounded-2xl overflow-hidden border border-white/5"
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover transition-all duration-700 grayscale-0 md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-100 md:opacity-60 md:group-hover:opacity-90 transition-opacity duration-500" />
+
+                  {/* Text Content */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                    <div className="transform transition-transform duration-500 md:translate-y-4 md:group-hover:translate-y-0">
+                      <p className="text-red-500 font-bold text-[10px] uppercase tracking-widest mb-2">
+                        {speaker.role}
+                      </p>
+                      <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-3">
+                        {speaker.name}
+                      </h4>
+
+                      {/* Bio expansion */}
+                      <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out md:opacity-0 md:group-hover:opacity-100">
+                        <p className="overflow-hidden text-sm text-gray-300 font-light italic leading-relaxed">
+                          {speaker.bio}
+                        </p>
+                      </div>
+
+                      {/* Socials */}
+                      <div className="flex gap-4 mt-4">
+                        {speaker.socials.linkedin && (
+                          <a
+                            href={speaker.socials.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaLinkedinIn size={18} />
+                          </a>
+                        )}
+                        {speaker.socials.facebook && (
+                          <a
+                            href={speaker.socials.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaFacebook size={18} />
+                          </a>
+                        )}
+                        {speaker.socials.youtube && (
+                          <a
+                            href={speaker.socials.youtube}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaYoutube size={20} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="mt-20 text-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 bg-red-600 text-white font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)]"
+            >
+              Get Your Tickets
+            </motion.button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Speakers;
