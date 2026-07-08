@@ -13,7 +13,7 @@ import CountdownTimer from "./CountdownTimer";
 const BACKGROUND_IMAGE_PATH =
   "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766945121/Logo_qteqe3.png";
 
-const EVENT_DATE = "2026-04-18T10:00:00";
+const EVENT_DATE = "2026-08-15T10:00:00";
 const Hero = () => {
   // --- MAGNETIC BUTTON LOGIC ---
   const buttonRef = useRef(null);
