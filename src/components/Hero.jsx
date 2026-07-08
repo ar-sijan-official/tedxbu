@@ -105,7 +105,7 @@ const Hero = () => {
         {/* --- INFO CARDS WITH BORDER ANIMATION --- */}
         <div className="flex flex-col md:flex-row gap-8 mt-16">
           {[
-            { icon: <FiCalendar />, label: "SAVE THE DATE", val: "April 18" },
+            { icon: <FiCalendar />, label: "SAVE THE DATE", val: "August 15" },
             {
               icon: <FiMapPin />,
               label: "VENUE",
