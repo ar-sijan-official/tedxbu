@@ -13,7 +13,7 @@ import CountdownTimer from "./CountdownTimer";
 const BACKGROUND_IMAGE_PATH =
   "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766945121/Logo_qteqe3.png";
 
-const EVENT_DATE = "2026-08-15T10:00:00";
+const EVENT_DATE = "2026-09-26T10:00:00";
 const Hero = () => {
   // --- MAGNETIC BUTTON LOGIC ---
   const buttonRef = useRef(null);
@@ -105,7 +105,7 @@ const Hero = () => {
         {/* --- INFO CARDS WITH BORDER ANIMATION --- */}
         <div className="flex flex-col md:flex-row gap-8 mt-16">
           {[
-            { icon: <FiCalendar />, label: "SAVE THE DATE", val: "August 15" },
+            { icon: <FiCalendar />, label: "SAVE THE DATE", val: "September 26" },
             {
               icon: <FiMapPin />,
               label: "VENUE",
